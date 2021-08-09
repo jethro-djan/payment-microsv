@@ -8,7 +8,8 @@ from models import Transaction, TransactionSchema
 from services import chargeservice as cs
 
 app = Flask(__name__)
-sqldatabase = 'mysql://admin@localhost:3306/main'
+# sqldatabase = 'mysql://admin@localhost:3306/main'
+sqldatabase = 'sqlite:////tmp/main.db'
 app.config.update(
     SQLALCHEMY_DATABASE_URI=sqldatabase,
     SQLALCHEMY_TRACK_MODIFICATIONS=False

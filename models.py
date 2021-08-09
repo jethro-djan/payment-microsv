@@ -4,6 +4,12 @@ from datetime import datetime
 from flask_marshmallow import Marshmallow
 
 app = Flask(__name__)
+sqldatabase = 'mysql://admin@localhost:3306/main'
+# sqldatabase = 'sqlite:///tmp/main.db'
+app.config.update(
+    SQLALCHEMY_DATABASE_URI=sqldatabase,
+    SQLALCHEMY_TRACK_MODIFICATIONS=False
+)
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
 
